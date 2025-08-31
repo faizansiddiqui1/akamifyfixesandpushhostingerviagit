@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.akamify.com
+          server: 147.93.17.212
           username: u794991062
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
