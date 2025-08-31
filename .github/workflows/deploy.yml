@@ -1,0 +1,30 @@
+name: Deploy Next.js to Hostinger
+
+on:
+  push:
+    branches:
+      - main   # Agar tumhari branch master hai to isse "master" kar dena
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js project
+        run: npm run build
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: 147.93.17.212
+          username: u794991062
+          password: faizanSidd12@&
+          port: 21
+          server-dir: public_html
+          local-dir: out
