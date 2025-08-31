@@ -34,5 +34,5 @@ jobs:
           username: u794991062
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          server-dir: public_html
-          local-dir: out
+          server-dir: public_html/
+          local-dir: out/
