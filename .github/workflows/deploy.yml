@@ -3,7 +3,7 @@ name: Deploy Next.js to Hostinger
 on:
   push:
     branches:
-      - main   # Agar tumhari branch master hai to isse "master" kar dena
+      - main   # agar tumhari branch master hai to master kar do
 
 jobs:
   build-deploy:
@@ -24,7 +24,7 @@ jobs:
         with:
           server: ftp.akamify.com
           username: u794991062
-          password: faizanSidd12@&
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           server-dir: public_html
           local-dir: out
