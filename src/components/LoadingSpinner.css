@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@700&display=swap');
+
+/* Ensure no margin/padding on body for full-screen centering */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the loading container */
+.loading-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  --primary-color: var(--data-color, #1e90ff); /* Fallback to default color */
+  --primary-size: var(--data-size, 6rem); /* Fallback to default size */
+}
+
+/* Styling the text */
+.loading-text {
+  font-family: 'Orbitron', 'Roboto', sans-serif;
+  font-size: var(--primary-size);
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  transition: all 0.4s ease;
+  transform: scale(1);
+  animation: scalePulse 2s infinite ease-in-out;
+}
+
+/* Glowing effect with gradient */
+.loading-text.glow {
+  text-shadow: 
+    0 0 10px var(--primary-color),
+    0 0 20px var(--primary-color),
+    0 0 40px rgba(30, 144, 255, 0.6),
+    0 0 80px rgba(30, 144, 255, 0.3);
+  animation: pulse 1.5s infinite alternate, scalePulse 2s infinite ease-in-out;
+}
+
+/* Bounce-in animation for each letter */
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: bounceIn 0.5s ease forwards;
+}
+
+/* Orbiting particles with varied sizes and opacities */
+.orbit-container {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.particle {
+  position: absolute;
+  background: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--primary-color);
+  animation: orbit 4s infinite linear;
+}
+
+.particle-1 {
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: 50%;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  right: 0;
+  animation-delay: 1s;
+  opacity: 0.8;
+}
+
+.particle-3 {
+  width: 12px;
+  height: 12px;
+  bottom: 0;
+  left: 50%;
+  animation-delay: 2s;
+  opacity: 0.9;
+}
+
+.particle-4 {
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 0;
+  animation-delay: 3s;
+  opacity: 0.7;
+}
+
+/* Subtle background pulse for added depth */
+.background-pulse {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-color, rgba(3, 11, 18, 0.2)) 0%, rgba(255, 255, 255, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: backgroundPulse 3s infinite ease-in-out;
+}
+
+/* Keyframe animations */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 
+      0 0 10px var(--primary-color),
+      0 0 20px var(--primary-color);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px var(--primary-color),
+      0 0 40px rgba(0, 8, 16, 0.6),
+      0 0 80px rgba(0, 10, 20, 0.3);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+
+@keyframes scalePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.4;
+  }
+}
