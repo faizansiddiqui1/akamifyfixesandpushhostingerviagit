@@ -6,6 +6,7 @@ import CTASection from "@/components/sections/CTASection";
 import DigitalServicesSection from "@/components/sections/DigitalServicesSection";
 import ShareMarketSection from "@/components/sections/ShareMarketSection";
 import DemoWebUi from "@/components/DemoWebUi";
+import { TeamMember } from "./our-team/components/TeamMember";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <DemoWebUi />
       <DigitalServicesSection />
+      <TeamMember />
       <TestimonialsSection />
       <ShareMarketSection />
       <CTASection />

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useAuth } from '../AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Cursor from '@/components/Cursor';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
