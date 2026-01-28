@@ -1,12 +1,25 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // <-- enable class-based dark mode
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(6px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
+      },
+      animation: {  
+        fadeInUp: 'fadeInUp 0.45s ease-out',
+      },
+      transitionTimingFunction: {
+        'soft': 'cubic-bezier(.2,.9,.2,1)',
+      }
+    },
   },
   plugins: [],
-}
+};
