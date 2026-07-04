@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <div className="relative "> 
       <HeroSection />
-      <DemoWebUi />
       <DigitalServicesSection />
       <TeamMember />
       <TestimonialsSection />

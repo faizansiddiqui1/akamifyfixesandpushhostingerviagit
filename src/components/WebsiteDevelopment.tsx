@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import DemoWebUi from '@/components/DemoWebUi';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -300,10 +299,7 @@ export default function WebsiteDevPage() {
         </div>
       </section>
 
-      {/* Demos Section */}
-      <section className="py-16 px-4 bg-white">
-        <DemoWebUi />
-      </section>
+    
 
       {/* Features Section */}
       <section className="py-16 px-4">
