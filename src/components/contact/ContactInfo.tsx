@@ -32,13 +32,7 @@ export default function ContactInfo() {
           Our team is ready to assist you from our offices across India. Schedule a
           consultation via email or phone.
           <br />
-          <span className="block font-semibold text-gray-800 dark:text-gray-700 mt-2">
-            Office:
-          </span>
-          <span className="block mt-1">
-            Visit us at our office in{" "}
-            <span className="font-medium">Farrukhabad, Uttar Pradesh, India</span>.
-          </span>
+        
         </p>
 
         <div className="space-y-4">
